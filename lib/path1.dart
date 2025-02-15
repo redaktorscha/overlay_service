@@ -13,18 +13,22 @@ class Path1 extends ConsumerWidget {
       ),
       body: Center(child: ElevatedButton(onPressed: () {
         final  OverlayState overlayState = Overlay.of(context);
-        debugPrint('overlayState: $overlayState');
+       //  debugPrint('overlayState: $overlayState');
         final double offset = ref.read(overlayServiceProvider).getBottomOffset();
         final OverlayEntry overlayEntry = OverlayEntry(
                   builder: (context) {
                     return Positioned(
                       bottom: offset,
                       left: 50,
-                      child: Container( decoration: BoxDecoration(
-                        color: Colors.grey.withOpacity(0.5),
-    border: Border.all(color: Colors.green, width: 4)
-  ), width: 200, height: 100,child: Text('message'),),
-                    );
+                      child: Material(child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(0.5),
+                          border: Border.all(color: Colors.green, width: 4)),
+                      width: 200,
+                      height: 100,
+                      child: const Text('message'),
+                    ),
+                    ));
                   },
                 );
 

@@ -22,30 +22,30 @@ class MyApp extends ConsumerWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      builder: (context, child) {
-        return Material(child: Stack(
-          children: [
-            child ?? Container(),
-          Overlay(
-              initialEntries: [
-                OverlayEntry(
-                  builder: (context) {
-                    return Positioned(
-                      bottom: 50,
-                      right: 50,
-                      child: Icon(
-                        Icons.online_prediction,
-                        color: Colors.grey,
-                      ),
-                    );
-                  },
-                ),
-              ],
-            ),
+      // builder: (context, child) {
+      //   return Material(child: Stack(
+      //     children: [
+      //       child ?? Container(),
+      //     Overlay(
+      //         initialEntries: [
+      //           OverlayEntry(
+      //             builder: (context) {
+      //               return Positioned(
+      //                 bottom: 50,
+      //                 right: 50,
+      //                 child: Icon(
+      //                   Icons.online_prediction,
+      //                   color: Colors.grey,
+      //                 ),
+      //               );
+      //             },
+      //           ),
+      //         ],
+      //       ),
            
-          ],
-        ));
-      },
+      //     ],
+      //   ));
+      // },
     );
   }
 }
