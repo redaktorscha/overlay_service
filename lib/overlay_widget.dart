@@ -44,15 +44,15 @@ class MyOverlay extends ConsumerWidget {
           SizedBox(width: 24),
           ElevatedButton(
             onPressed: () {
-              final OverlayState overlayState = Overlay.of(context);
-              final OverlayEntry overlayEntry = OverlayEntry(
-                builder: (context) {
-                  return const OverlayEntryWidget();
-                },
-              );
+              // final OverlayState overlayState = Overlay.of(context);
+              // final OverlayEntry overlayEntry = OverlayEntry(
+              //   builder: (context) {
+              //     return const OverlayEntryWidget();
+              //   },
+              // );
 
-              overlayState.insert(overlayEntry);
-              ref.read(overlayServiceProvider).addOverlay(overlayEntry);
+              // overlayState.insert(overlayEntry);
+              ref.read(overlayServiceProvider).addOverlay();
             },
             child: const Text('add Overlay'),
           ),

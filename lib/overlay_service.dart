@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:overlay_test/navigation_service.dart';
+import 'package:overlay_test/overlay_entry_widget.dart';
 
 class OverlayService {
   List<OverlayEntry> overlayEntries = [];
@@ -22,8 +23,18 @@ class OverlayService {
     bottomOffset -= 10;
   }
 
-  void addOverlay(OverlayEntry overlayEntry) {
+  void addOverlay() {
+
+        final overlayState = NavigationService.navigatorKey.currentState!.overlay;
+      //  debugPrint('overlayState: $overlayState');
+      final OverlayEntry overlayEntry = OverlayEntry(
+                  builder: (context) {
+                    return const OverlayEntryWidget();
+                  },
+                );
+
     overlayEntries.add(overlayEntry);
+     overlayState?.insert( overlayEntry);
     incrementBottomOffset();
     debugPrint('overlayEntries.length: ${overlayEntries.length}');
   }

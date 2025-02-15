@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:overlay_test/navigation_service.dart';
 import 'package:overlay_test/overlay_entry_widget.dart';
 import 'package:overlay_test/overlay_service_provider.dart';
 
@@ -13,15 +14,16 @@ class Path1 extends ConsumerWidget {
         title: const Text('path1'),
       ),
       body: Center(child: ElevatedButton(onPressed: () {
-        final  OverlayState overlayState = Overlay.of(context);
-        final OverlayEntry overlayEntry = OverlayEntry(
-                  builder: (context) {
-                    return const OverlayEntryWidget();
-                  },
-                );
+        // final overlayState = NavigationService.navigatorKey.currentState!.overlay;
+        // // final  OverlayState overlayState = Overlay.of(context);
+        // final OverlayEntry overlayEntry = OverlayEntry(
+        //           builder: (context) {
+        //             return const OverlayEntryWidget();
+        //           },
+        //         );
 
-        overlayState.insert( overlayEntry);
-        ref.read(overlayServiceProvider).addOverlay(overlayEntry);
+        // overlayState?.insert( overlayEntry);
+        ref.read(overlayServiceProvider).addOverlay();
       }, child: Text('add overlay')),));
   }
 }
