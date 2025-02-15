@@ -45,5 +45,6 @@ class OverlayService {
       entry.remove();
     }
     overlayEntries.clear();
+    recalculateBottomOffset();
   }
 }
